@@ -1,6 +1,7 @@
 <?php
 
 // https://semantic-ui.com/collections/form.html
+// pulipulichen.github.io/blogger/posts/2017/03/popup.html?_=&icon=http://icons.iconarchive.com/icons/dtafalonso/android-lollipop/512/Dictionary-icon.png&url=http://localhost/terra_pinyin_dict_editor/index.php
 
 include 'config.php';
 include 'function.php';
@@ -13,6 +14,7 @@ $dicts = get_dict();
         <title>小狼毫注音輸入法 編輯器</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="http://pulipulichen.github.io/blogger/posts/2017/03/icon/rime2.png" type="image/png">
     </head>
     <body>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>

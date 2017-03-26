@@ -45,5 +45,5 @@ function set_dict($dicts) {
     //echo $dict_text;
     
     file_put_contents($CONFIG["terra_pinyin.mine.dict.yaml"], $dict_text);
-    
+    file_put_contents($CONFIG["terra_pinyin.mine.dict.yaml_backup"], $dict_text);
 }   // function get_dict () {
