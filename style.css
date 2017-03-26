@@ -48,3 +48,7 @@ table {
 table td {
       vertical-align: top;
 }
+
+.instruction strong {
+    color: brown;
+}
