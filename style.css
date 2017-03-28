@@ -52,3 +52,7 @@ table td {
 .instruction strong {
     color: brown;
 }
+
+input.focus {
+    background-color: yellow !important;
+}

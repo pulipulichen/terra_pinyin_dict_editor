@@ -39,8 +39,15 @@ $(function () {
         }
     };
     
-    _panel.find('input[name="dict_key"]').change(_create_moe_dict_iframe)
-        .focus(_create_moe_dict_iframe);
+    _panel.find('input[name="dict_key"]').change(_create_moe_dict_iframe);
+        //.focus(_create_moe_dict_iframe);
+
+    //console.log(_panel.find('input[type="text"]').length);
+    _panel.find('input[type="text"]').focus(function () {
+        $(this).addClass("focus");
+    }).blur(function () {
+        $(this).removeClass("focus");
+    });
   
     _panel.submit(function () {
         var _error = false;
