@@ -26,7 +26,13 @@ include 'function.php';
 set_dict($dicts);
 
 // @TODO 重新啟動小狼毫
-$output = shell_exec($CONFIG["deploy"]);
-//echo $output;
+exec($CONFIG["deploy"], $output, $return_var);
+//echo $return_var;
 
-header("Location: index.php");
+if ($return_var === 0) {
+	header("Location: index.php");
+}
+else {
+	// 如果出現錯誤，則顯示錯誤訊息
+	echo "Weasel deploy is failed.";
+}
