@@ -30,6 +30,21 @@ $(function () {
         
         var _moe_dict_preview = $("#moe_dicts").empty();
         
+		var _blur_limit = 1;
+		var _dict_value = $(this).parents("tr:first").find('input[name="dict_value"]:first');
+		_dict_value.focus();
+		_dict_value.blur(function () {
+			_blur_limit--;
+			console.log(_blur_limit);
+			if (_blur_limit > -1) {
+				setTimeout(function () {
+					console.log("focus");
+					_dict_value.focus();
+				}, 1000);
+				
+			}
+		});
+		
         for (var _i = 0; _i < _words.length; _i++) {
             var _word = _words[_i];
             // https://www.moedict.tw/%E9%81%8E
@@ -37,6 +52,7 @@ $(function () {
             var _url = "https://www.moedict.tw/" + _word;
             _moe_dict_preview.append('<iframe src="' + _url + '" width="100%" height="250px"></iframe>');
         }
+		
     };
     
     _panel.find('input[name="dict_key"]').change(_create_moe_dict_iframe);
