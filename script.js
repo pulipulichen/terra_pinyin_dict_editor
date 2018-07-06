@@ -35,10 +35,10 @@ $(function () {
 		_dict_value.focus();
 		_dict_value.blur(function () {
 			_blur_limit--;
-			console.log(_blur_limit);
+			//console.log(_blur_limit);
 			if (_blur_limit > -1) {
 				setTimeout(function () {
-					console.log("focus");
+					//console.log("focus");
 					_dict_value.focus();
 				}, 1000);
 				
