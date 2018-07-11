@@ -133,7 +133,7 @@ var _text_changed = function () {
     $("#save_button").addClass("green");
     
     if (document.title.indexOf("*") === -1) {
-        document.title = "* " + document.title;
+        document.title = "*" + document.title;
         // 表示未儲存
     }
 };
