@@ -27,23 +27,26 @@ $(function () {
     
     var _create_moe_dict_iframe = function () {
         var _words = this.value.trim().split("");
+        if (_words.length === 0) {
+            return;
+        }
         
         var _moe_dict_preview = $("#moe_dicts").empty();
         
-		var _blur_limit = 1;
-		var _dict_value = $(this).parents("tr:first").find('input[name="dict_value"]:first');
-		_dict_value.focus();
-		_dict_value.blur(function () {
-			_blur_limit--;
-			//console.log(_blur_limit);
-			if (_blur_limit > -1) {
-				setTimeout(function () {
-					//console.log("focus");
-					_dict_value.focus();
-				}, 1000);
-				
-			}
-		});
+        var _blur_limit = 1;
+        var _dict_value = $(this).parents("tr:first").find('input[name="dict_value"]:first');
+        _dict_value.focus();
+        _dict_value.blur(function () {
+                _blur_limit--;
+                //console.log(_blur_limit);
+                if (_blur_limit > -1) {
+                        setTimeout(function () {
+                                //console.log("focus");
+                                _dict_value.focus();
+                        }, 1000);
+
+                }
+        });
 		
         for (var _i = 0; _i < _words.length; _i++) {
             var _word = _words[_i];
@@ -63,6 +66,10 @@ $(function () {
         $(this).addClass("focus");
     }).blur(function () {
         $(this).removeClass("focus");
+    });
+    
+    _panel.find('input[type="text"]').change(function () {
+        _text_changed();
     });
   
     _panel.submit(function () {
@@ -115,3 +122,18 @@ $(function () {
         }
     });
 });
+
+var _set_changed = false;
+var _text_changed = function () {
+    if (_set_changed === true) {
+        return;
+    }
+    
+    _set_changed = true;
+    $("#save_button").addClass("green");
+    
+    if (document.title.indexOf("*") === -1) {
+        document.title = "* " + document.title;
+        // 表示未儲存
+    }
+};

@@ -83,7 +83,7 @@ foreach ($dicts AS $dict) {
     </table>
     </div>
     <div class="field">
-      <button type="sumit" class="fluid ui large right labeled icon green button download-file">
+        <button type="sumit" class="fluid ui large right labeled icon button download-file" id="save_button" onclick="$('body').addClass('loading');">
         <i class="right save icon"></i>
         儲存
       </button>
@@ -114,5 +114,7 @@ foreach ($dicts AS $dict) {
   </div> <!-- <div class="ui two column doubling grid"> -->
 </form>
 
- </body>
+<div class="loading-cover"><div class="loading-image"></div></div>
+
+</body>
 </html>
