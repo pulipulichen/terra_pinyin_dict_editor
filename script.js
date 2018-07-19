@@ -115,6 +115,7 @@ $(function () {
         });
         
         if (_error === false) {
+            $('body').addClass('loading');
             return true;
         }
         else {

@@ -83,7 +83,7 @@ foreach ($dicts AS $dict) {
     </table>
     </div>
     <div class="field">
-        <button type="sumit" class="fluid ui large right labeled icon button download-file" id="save_button" onclick="$('body').addClass('loading');">
+        <button type="sumit" class="fluid ui large right labeled icon button download-file" id="save_button">
         <i class="right save icon"></i>
         儲存
       </button>
